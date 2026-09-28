@@ -25,10 +25,31 @@ The report also contains related claims
 This claim was choosen because it builds on the issue identified in A1. The analysis in A1 showed that the IFC model may not contain enough information to clearly identify and assess the fire evacuation system.
 The claim also allows several types og BIM information to be checked, including geometry, spaces, doors, stairs and evacuation distances.
 
-The proposed tool should therfore give one of three results:
+The proposed tool should therefore give one of three results:
 - PASS - the model contains enough information and the claim is supported
-- FAIL - the modl contains enough information, but the claim is not supported
-- 
+- FAIL - the model contains enough information, but the claim is not supported
+- NOT VERIFIABLE - important information is missing or unclear, so the claim can not be checked reliably.
+The NOT VERIFIABLE result is important because missing information in the IFC model does not automatically mean that the building is unsafe or does not comply with fire regulations. 
 
-## A2c: 
+## A2c: Use case
+### How would the claim be checked
+1. Define the requirements of the claim, including the maximum escape route distance of 25 m.
+2. Load the IFC model using Python and IfcOpenShell.
+3. Check whether the model contains the necessary information about spaces, doors, stairs, exits and connections between spaces.
+4. Identify the spaces and building elements that are relevant to the evacuation route.
+5. Create a connection between spaces, doors, stairs and exits to represent possible escape routes.
+6. Check additional information where available, such as stair width, door width, fire rating information and door opening directions.
+
+### When should it be checked
+In the design and modeling phase, after the fire egress concept has bee modelled and again after any change to room layout, door, stairs or external exits. 
+
+### What information does this claim rely on
+The check requires:
+- Spaces and their geometry
+- Doors, stairs and emergency exits
+- Connections between the elements
+- Relevant dimenstions and fire safety properties
+- The 25 m. requirement from the design report
+  
+
 

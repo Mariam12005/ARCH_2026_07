@@ -50,6 +50,14 @@ The check requires:
 - Connections between the elements
 - Relevant dimenstions and fire safety properties
 - The 25 m. requirement from the design report
-  
+
+### BIM purpose required
+- Primary: Analyse - derive route lengths and validate the claim against model data.
+- Supporting: Gather - extract IFC data and detect missing information.
+- Supporting: Communicate - report pass/fail/not verifiable results to the decision makers.
+
+### Closest BIM use
+- The primary BIM use would be Code Validation/Model checking. The task would compare facts derived from the model with project criteria
+- The secondary BIM use would be Analysis. A analysis would be given of the fire evacuation route in building 308.
 
 

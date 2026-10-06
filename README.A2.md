@@ -60,4 +60,12 @@ The check requires:
 - The primary BIM use would be Code Validation/Model checking. The task would compare facts derived from the model with project criteria
 - The secondary BIM use would be Analysis. A analysis would be given of the fire evacuation route in building 308.
 
+### BPMN diagram
+<img width="751" height="332" alt="image" src="https://github.com/user-attachments/assets/760e6ea4-5811-4af7-90a5-cca46c93a7e8" />
 
+Figure 1: Fire escape route check
+
+## A2d - Scope the use case
+The purpose of the tool is to determine whether IFC model contains sufficient and reliable information to evaluate the selected fire evacuation claim and, where possible, verify the claim using model derived geometry, relationships, properties, and calculated route distances. Where the required is incomplete or ambiguous, the tool will report the claim as not verifiable rather than interpreting missing data as non compliance. 
+<img width="838" height="223" alt="image" src="https://github.com/user-attachments/assets/911cd230-dab3-432c-b333-a679303fa990" />
+Figur 2: Diagram for tool

@@ -73,5 +73,39 @@ Figur 2: Diagram for tool
 ## A2e - Tool idea
 ### IFC Fire escape checker
 #### Tool concept
-A command line python tool using IfcOpenshell. The first A3 version can be small and testable.
+The proposed tool is an OpenBIM-based fire evacuation checking tool. Its purpose is to evaluate whether the IFC model contains enough information to verify the selected evacuation claim.
+The tool would use information about spaces, doors, stairs, emergency exits and their relationships to identify possible evacuation routes. Where sufficient information is available, the route distance would be checked against the 25 m maximum distance stated in the report.
+
+The final result would be presented as:
+- Pass – the claim is supported by the available IFC information.
+- Fail – the available information shows that the requirement is not met.
+- Not Verifiable – the IFC model does not contain enough reliable information to complete the check.
+
+The tool would also identify missing or unclear model information that prevents verification.
+#### Business and societal value
+The tool could support BIM coordinators, designers and fire safety specialists by providing a faster way of checking evacuation related information in an IFC model.
+
+The main benefits are:
+- Earlier identification of missing fire-safety information.
+- More consistent checking of evacuation requirements.
+- Reduced manual review of BIM models.
+- Better communication of model changes
+- Improved support for fire safety review during the design process.
+
+From a societal perspective, the tool could contribute to safer building design by supporting earlier identification of evacuation-related issues.
+
+## A2f: Information requirements
+The proposed verification workflow requires geometric, semantic, and relational information from the IFC model. The main information needed is the location and geometry of spaces, doors, stairs, and potential emergency exits, together with the connections between these elements.
+The model must provide enough spatial information to identify possible evacuation routes. This includes IfcSpace for spaces, IfcDoor for doors, IfcStair and IfcStairFlight for stairs. Door widths can be obtained from IfcDoor while fire-safety information may be stored in property sets such as Pset_DoorCommon and Pset_SpaceFireSafetyRequirements.
+
+Connectivity between spaces and exits is also required. Ideally, this would be available through relationships such as IfcRelSpaceBoundary. In the supplied B308X model, this information is incomplete, so additional geometric analysis may be needed to determine how spaces, doors, and stairs are connected.
+
+The maximum permitted escape-route distance of 25 m is not taken from the IFC model itself. It is an external requirement from the selected design report and would be used as a comparison value in the checking process.
+IfcOpenShell can be used to extract the relevant IFC classes, properties, placements, and relationships. The main learning requirements for A3 are therefore how to access property sets, interpret spatial relationships and calculate evacuation route distances.
+
+Because some of the required fire safety and connectivity information is missing or incomplete in the current model, the tool must first check whether the model contains sufficient information for the analysis. If not, the result should be classified as Not Verifiable.
+
+## A2g: Appropriate software licence
+For this project we choose the MIT license because it permits reuse, modification and distribution with minimal licensing requirements, which is suitable for a small educational OpenBIM tool.
+
 

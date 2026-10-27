@@ -53,7 +53,8 @@ You need: Python, VS Code, and an IFC model file (for example, B308X(1).ifc).
 - **Fire-safety engineers / consultants:** identify what fire-egress data exists and what requires further verification.
 - **Architects / building designers:** review door widths, exit flags, space data, and design-model coordination.
 - **Structural / stair designers:** inspect IFC stair and stair-flight objects and available widths or positions.
-- **Project teams / reviewers:** document information gaps before more detailed evacuation or compliance analysis.
+- **Project teams / reviewers:** Use the tool to identify missing fire safety information and assess the quality of the IFC model before further analysis.
+Identify missing fire safety information and assess the quality of the IFC model before further analysis.
 
 ### 7. IFC information required for the tool to work
 

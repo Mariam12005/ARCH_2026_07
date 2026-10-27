@@ -60,25 +60,18 @@ Identify missing fire safety information and assess the quality of the IFC model
 
 **Essential to run:**
 
-- A valid, readable **`.ifc` file** with an IFC project and elements of the classes being checked (empty categories can still be reported).
-- IFC objects with **GlobalIds**, so individual elements can be identified in the output.
+- A valid IFC file (.ifc) containing building information.
+- IFC objects with GlobalIds, so individual elements can be identified in the output.
 
 **Required for specific, useful checks:**
 
 | IFC data | Used for |
 |---|---|
-| `IfcDoor` and `OverallWidth` | Door inventory and nominal width screening |
-| `Pset_DoorCommon.FireExit` | Fire-exit identification for doors |
-| `Pset_DoorCommon.FireRating`, `SelfClosing`, `SmokeStop` | Presence/absence of door fire and smoke properties |
-| `IfcSpace`, `IfcZone` and `Pset_SpaceFireSafetyRequirements.FireExit` | Space/zone inventory and documented fire-exit flags |
-| `IfcStair`, `IfcStairFlight` and relevant property sets | Stair inventory, relevant reported properties and available widths |
-| `ClearWidth` or `EffectiveWidth` in IFC property sets | Explicitly documented passage or stair width values |
+| IfcDoor and OverallWidth | Door inventory and nominal width screening |
+| Pset_DoorCommon.FireExit | Fire-exit identification for doors |
+| Pset_DoorCommon.FireRating, SelfClosing, SmokeStop | Presence/absence of door fire and smoke properties |
+| IfcSpace, IfcZone and Pset_SpaceFireSafetyRequirements.FireExit | Space/zone inventory and documented fire-exit flags |
+| IfcStair, IfcStairFlight and relevant property sets | Stair inventory, relevant reported properties and available widths |
+| ClearWidth or EffectiveWidth in IFC property sets | Explicitly documented passage or stair width values |
 | 3D representations and placements | Readable geometry counts, geometry centers and stair XY positions |
-| `IfcRelSpaceBoundary` | Number of available space-boundary relationships **only** |
-| IFC length units | Converting model dimensions to metres |
-
-Missing or unpopulated properties appear as **not specified**, **without value**, or **not available**, depending on the report section. Data-quality findings should be reviewed by project specialists against the applicable project brief, the architectural/fire strategy, and governing requirements.
-
----
-
-**Submission summary:** This tool helps Group 07 assess **whether Building 308's IFC model contains accessible fire-evacuation data**. It is an early-stage **information-quality checker**, not a completed evacuation-route simulator or fire-code compliance certifier.
+| IfcRelSpaceBoundary | Only number of available space-boundary relationships |

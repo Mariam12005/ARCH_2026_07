@@ -11,21 +11,20 @@ The checker focuses on identifying missing or incomplete information in the IFC 
 
 ### 2. Where the problem was identified
 
-The problem was identified in the Group 07 A1 analysis of the Building 308 IFC model, which highlighted missing fire safety properties and incomplete spatial information. The project brief also refers to section 1.2.6 "Fire Safety and Egress," in "26-08-A-ClientReport-Anon.pdf" as the source of the fire evacuation claims to be investigated.
+The problem was identified in the Group 07 A1 analysis of the Building 308 IFC model, which highlighted missing fire-safety properties and incomplete spatial information. The project brief also refers to section 1.2.6 "Fire Safety and Egress," in "26-08-A-ClientReport-Anon.pdf" as the source of the fire-evacuation claims to be investigated.
 
 ### 3. Description of the tool
 
-The **A4 IFC Fire Evacuation Checker** is a standalone Python program that opens an IFC model using **IfcOpenShell** and prints a structured, read-only report in the terminal. It examines `IfcDoor`, `IfcSpace`, `IfcZone`, `IfcStair`, and `IfcStairFlight` elements.
+The A4 IFC Fire Evacuation Checker is a standalone Python program that opens an IFC model using IfcOpenshell and prints a structured, read-only report in the terminal. It examines "IfcDoor," "IfcSpace", "IfcZone", "IfcStair", and "IfcStairFlight" elements.
 
-The current Python implementation produces **seven sections**:
+The current Python implementation produces six sections:
 
-1. **Model overview** — counts the selected IFC element classes and records whether their 3D geometry can be read.
-2. **Fire evacuation identification** — counts `FireExit = True`, `FireExit = False`, and unspecified values for doors, spaces, and zones in the chosen property sets.
+1. Model overview — counts the selected IFC element classes and records whether their 3D geometry can be read.
+2. Fire evacuation identification — counts `FireExit = True`, `FireExit = False`, and unspecified values for doors, spaces, and zones in the chosen property sets.
 3. **Fire-safety properties** — checks whether selected property sets and property values are present; also lists other properties whose names suggest relevance to fire, egress, or width.
 4. **Door geometry and widths** — reports `OverallWidth` values, groups nominal door widths above or below **1.20 m**, lists door names and GlobalIds, and counts explicit `ClearWidth` / `EffectiveWidth` values where present.
 5. **Stair geometry and location** — reports stairs and stair flights, available coordinates and documented clear/effective widths.
 6. **Escape routes and connections** — counts `IfcRelSpaceBoundary` relationships and explains what cannot be concluded from that count.
-7. **Final results** — summarizes available data and explicitly marks unimplemented or unverified checks. It also prints a comparison key derived from the collected model data.
 
 **Important limitations:**
 
@@ -70,6 +69,7 @@ Replace `<your-user>` and the path with the actual file location. This bypasses 
 
 **Primarily Stage C, and also Stage D** — during detailed model development, coordination, and review, when IFC objects, dimensions, property sets, and geometry should be sufficiently developed for automated model-data checks. It can also be used earlier **if** the model already includes the required information; missing fields in an early-stage model should be understood as a data gap, not automatically a design failure.
 
+*The exact naming of Stages A–D is course-specific; this recommendation describes when the checker becomes practically useful rather than asserting a formal stage definition.*
 
 ### 6. Subjects and disciplines that might use it
 

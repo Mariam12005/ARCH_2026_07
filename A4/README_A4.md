@@ -11,7 +11,7 @@ The checker focuses on identifying missing or incomplete information in the IFC 
 
 ### 2. Where the problem was identified
 
-The problem was identified in the Group 07 A1 analysis of the Building 308 IFC model, which highlighted missing fire-safety properties and incomplete spatial information. The project brief also refers to section 1.2.6 "Fire Safety and Egress," in "26-08-A-ClientReport-Anon.pdf" as the source of the fire-evacuation claims to be investigated.
+The problem was identified in the Group 07 A1 analysis of the Building 308 IFC model, which highlighted missing fire safety properties and incomplete spatial information. The project brief also refers to section 1.2.6 "Fire Safety and Egress," in "26-08-A-ClientReport-Anon.pdf" as the source of the fire evacuation claims to be investigated.
 
 ### 3. Description of the tool
 

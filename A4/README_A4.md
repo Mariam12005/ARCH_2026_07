@@ -70,7 +70,6 @@ Replace `<your-user>` and the path with the actual file location. This bypasses 
 
 **Primarily Stage C, and also Stage D** — during detailed model development, coordination, and review, when IFC objects, dimensions, property sets, and geometry should be sufficiently developed for automated model-data checks. It can also be used earlier **if** the model already includes the required information; missing fields in an early-stage model should be understood as a data gap, not automatically a design failure.
 
-*The exact naming of Stages A–D is course-specific; this recommendation describes when the checker becomes practically useful rather than asserting a formal stage definition.*
 
 ### 6. Subjects and disciplines that might use it
 

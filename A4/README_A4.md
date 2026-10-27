@@ -45,13 +45,11 @@ You need: Python, VS Code, and an IFC model file (for example, B308X(1).ifc).
 
 ### 5. Relevant design stage (A, B, C or D)
 
-**Primarily Stage C, and also Stage D** — during detailed model development, coordination, and review, when IFC objects, dimensions, property sets, and geometry should be sufficiently developed for automated model-data checks. It can also be used earlier **if** the model already includes the required information; missing fields in an early-stage model should be understood as a data gap, not automatically a design failure.
-
-*The exact naming of Stages A–D is course-specific; this recommendation describes when the checker becomes practically useful rather than asserting a formal stage definition.*
+**Primarily Stage C, and also Stage D** during detailed model development, coordination, and review, when IFC objects, dimensions, property sets, and geometry should be sufficiently developed for automated model-data checks. It can also be used earlier if the model already includes the required information; missing fields in an early-stage model should be understood as a data gap, not automatically a design failure.
 
 ### 6. Subjects and disciplines that might use it
 
-- **BIM coordinators / BIM managers:** audit IFC data completeness and identify missing properties.
+- **BIM coordinators / BIM managers:** audit complete IFC data and identify missing properties.
 - **Fire-safety engineers / consultants:** identify what fire-egress data exists and what requires further verification.
 - **Architects / building designers:** review door widths, exit flags, space data, and design-model coordination.
 - **Structural / stair designers:** inspect IFC stair and stair-flight objects and available widths or positions.

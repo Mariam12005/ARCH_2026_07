@@ -1,44 +1,31 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<ids:ids
-    xmlns:ids="http://standards.buildingsmart.org/IDS"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+<?xml version='1.0' encoding='UTF-8'?>
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>Group 07 - Fire Evacuation Model Information Requirements</ids:title>
+    <ids:title>Group 07 - IFC Fire Evacuation Checker: Model Data Readiness</ids:title>
     <ids:version>1.0</ids:version>
-    <ids:description>Model information requirements for fire evacuation identification and subsequent Python-based geometry checks. An IDS validation failure indicates incomplete information, not proof of unsafe evacuation.</ids:description>
-    <ids:purpose>Check data availability before fire evacuation analysis</ids:purpose>
+    <ids:description>IDS for checking whether an IFC4X3_ADD2 model includes core data for a meaningful run of the Group 07 read-only Python checker. This is not a fire-code compliance check.</ids:description>
+    <ids:date>2026-10-27</ids:date>
+    <ids:purpose>A4 task 04: verify delivery of basic model entities and the type of any supplied fire-egress properties before running the Python analysis.</ids:purpose>
+    <ids:milestone>Advanced Building Design A4</ids:milestone>
   </ids:info>
-
   <ids:specifications>
-
-    <!-- 1. Door dimensions -->
-    <ids:specification name="Doors - nominal dimensions" ifcVersion="IFC4X3_ADD2">
+    <ids:specification name="Project information must exist" ifcVersion="IFC4X3_ADD2" identifier="G07-01" description="A readable project is expected for the IFC data audit. This specification cannot verify that the IFC file opens or that geometry is valid." instructions="Deliver a valid IFC4X3_ADD2 project.">
       <ids:applicability minOccurs="1" maxOccurs="unbounded">
         <ids:entity>
           <ids:name>
-            <ids:simpleValue>IFCDOOR</ids:simpleValue>
+            <ids:simpleValue>IFCPROJECT</ids:simpleValue>
           </ids:name>
         </ids:entity>
       </ids:applicability>
-      <ids:requirements>
+      <ids:requirements description="Mandatory GlobalId for selected IFC entities; other parameters are optional and checked only when supplied.">
         <ids:attribute cardinality="required">
           <ids:name>
-            <ids:simpleValue>OverallWidth</ids:simpleValue>
-          </ids:name>
-        </ids:attribute>
-        <ids:attribute cardinality="required">
-          <ids:name>
-            <ids:simpleValue>OverallHeight</ids:simpleValue>
+            <ids:simpleValue>GlobalId</ids:simpleValue>
           </ids:name>
         </ids:attribute>
       </ids:requirements>
     </ids:specification>
-
-    <!-- 2. Fire exit identification -->
-    <ids:specification name="Doors - fire exit identification" ifcVersion="IFC4X3_ADD2">
+    <ids:specification name="At least one door with identifiable data" ifcVersion="IFC4X3_ADD2" identifier="G07-02" description="The report counts doors, reads nominal OverallWidth when available, checks fire properties when available, and attempts a geometry read." instructions="Deliver at least one IfcDoor for a useful door-egress report. Missing optional properties are reported as missing by the Python tool.">
       <ids:applicability minOccurs="1" maxOccurs="unbounded">
         <ids:entity>
           <ids:name>
@@ -46,8 +33,18 @@
           </ids:name>
         </ids:entity>
       </ids:applicability>
-      <ids:requirements>
-        <ids:property cardinality="required" dataType="IFCBOOLEAN">
+      <ids:requirements description="Mandatory GlobalId for selected IFC entities; other parameters are optional and checked only when supplied.">
+        <ids:attribute cardinality="required">
+          <ids:name>
+            <ids:simpleValue>GlobalId</ids:simpleValue>
+          </ids:name>
+        </ids:attribute>
+        <ids:attribute cardinality="optional" instructions="Nominal door width is optional in this readiness IDS; the checker reports missing values.">
+          <ids:name>
+            <ids:simpleValue>OverallWidth</ids:simpleValue>
+          </ids:name>
+        </ids:attribute>
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN" instructions="If supplied, this property should be a Boolean. Do not require FireExit for every door.">
           <ids:propertySet>
             <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
           </ids:propertySet>
@@ -55,20 +52,7 @@
             <ids:simpleValue>FireExit</ids:simpleValue>
           </ids:baseName>
         </ids:property>
-      </ids:requirements>
-    </ids:specification>
-
-    <!-- 3. Door fire safety properties -->
-    <ids:specification name="Doors - other fire safety data" ifcVersion="IFC4X3_ADD2">
-      <ids:applicability minOccurs="1" maxOccurs="unbounded">
-        <ids:entity>
-          <ids:name>
-            <ids:simpleValue>IFCDOOR</ids:simpleValue>
-          </ids:name>
-        </ids:entity>
-      </ids:applicability>
-      <ids:requirements>
-        <ids:property cardinality="optional" dataType="IFCLABEL">
+        <ids:property cardinality="optional" dataType="IFCLABEL" instructions="If supplied, FireRating should be a label; its legal adequacy is not checked.">
           <ids:propertySet>
             <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
           </ids:propertySet>
@@ -76,7 +60,7 @@
             <ids:simpleValue>FireRating</ids:simpleValue>
           </ids:baseName>
         </ids:property>
-        <ids:property cardinality="optional" dataType="IFCBOOLEAN">
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN" instructions="If supplied, SelfClosing should be Boolean.">
           <ids:propertySet>
             <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
           </ids:propertySet>
@@ -84,7 +68,7 @@
             <ids:simpleValue>SelfClosing</ids:simpleValue>
           </ids:baseName>
         </ids:property>
-        <ids:property cardinality="optional" dataType="IFCBOOLEAN">
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN" instructions="If supplied, SmokeStop should be Boolean.">
           <ids:propertySet>
             <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
           </ids:propertySet>
@@ -94,39 +78,21 @@
         </ids:property>
       </ids:requirements>
     </ids:specification>
-
-    <!-- 4. Space fire safety -->
-    <ids:specification name="Spaces - evacuation identification" ifcVersion="IFC4X3_ADD2">
-      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+    <ids:specification name="At least one space for the evacuation data report" ifcVersion="IFC4X3_ADD2" identifier="G07-03" description="The script evaluates space-related FireExit values, reports available geometry, and counts all spaces." instructions="Deliver at least one IfcSpace for meaningful space-related results.">
+      <ids:applicability minOccurs="1" maxOccurs="unbounded">
         <ids:entity>
           <ids:name>
             <ids:simpleValue>IFCSPACE</ids:simpleValue>
           </ids:name>
         </ids:entity>
       </ids:applicability>
-      <ids:requirements>
-        <ids:property cardinality="required" dataType="IFCBOOLEAN">
-          <ids:propertySet>
-            <ids:simpleValue>Pset_SpaceFireSafetyRequirements</ids:simpleValue>
-          </ids:propertySet>
-          <ids:baseName>
-            <ids:simpleValue>FireExit</ids:simpleValue>
-          </ids:baseName>
-        </ids:property>
-      </ids:requirements>
-    </ids:specification>
-
-    <!-- 5. Zone fire safety -->
-    <ids:specification name="Zones - evacuation identification" ifcVersion="IFC4X3_ADD2">
-      <ids:applicability minOccurs="0" maxOccurs="unbounded">
-        <ids:entity>
+      <ids:requirements description="Mandatory GlobalId for selected IFC entities; other parameters are optional and checked only when supplied.">
+        <ids:attribute cardinality="required">
           <ids:name>
-            <ids:simpleValue>IFCZONE</ids:simpleValue>
+            <ids:simpleValue>GlobalId</ids:simpleValue>
           </ids:name>
-        </ids:entity>
-      </ids:applicability>
-      <ids:requirements>
-        <ids:property cardinality="required" dataType="IFCBOOLEAN">
+        </ids:attribute>
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN" instructions="The checker records missing FireExit values without crashing.">
           <ids:propertySet>
             <ids:simpleValue>Pset_SpaceFireSafetyRequirements</ids:simpleValue>
           </ids:propertySet>
@@ -136,9 +102,7 @@
         </ids:property>
       </ids:requirements>
     </ids:specification>
-
-    <!-- 6. Stair fire safety -->
-    <ids:specification name="Stairs - fire exit information" ifcVersion="IFC4X3_ADD2">
+    <ids:specification name="Stairs are checked when present" ifcVersion="IFC4X3_ADD2" identifier="G07-04" description="Stair presence and readable geometry are reported. Stairs are not required for the script to start." instructions="IfcStair is optional for this use-case input check.">
       <ids:applicability minOccurs="0" maxOccurs="unbounded">
         <ids:entity>
           <ids:name>
@@ -146,10 +110,47 @@
           </ids:name>
         </ids:entity>
       </ids:applicability>
-      <ids:requirements>
-        <ids:property cardinality="optional" dataType="IFCBOOLEAN">
+      <ids:requirements description="Mandatory GlobalId for selected IFC entities; other parameters are optional and checked only when supplied.">
+        <ids:attribute cardinality="required">
+          <ids:name>
+            <ids:simpleValue>GlobalId</ids:simpleValue>
+          </ids:name>
+        </ids:attribute>
+      </ids:requirements>
+    </ids:specification>
+    <ids:specification name="Stair flights are checked when present" ifcVersion="IFC4X3_ADD2" identifier="G07-05" description="The checker reports stair-flight geometry, placement, and any ClearWidth or EffectiveWidth property it can locate." instructions="IfcStairFlight is optional for this use-case input check.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTAIRFLIGHT</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements description="Mandatory GlobalId for selected IFC entities; other parameters are optional and checked only when supplied.">
+        <ids:attribute cardinality="required">
+          <ids:name>
+            <ids:simpleValue>GlobalId</ids:simpleValue>
+          </ids:name>
+        </ids:attribute>
+      </ids:requirements>
+    </ids:specification>
+    <ids:specification name="Zones are checked when present" ifcVersion="IFC4X3_ADD2" identifier="G07-06" description="IfcZone is treated as a grouping with no expected own geometry and is optional." instructions="No zone is required for the Python script to run.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCZONE</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements description="Mandatory GlobalId for selected IFC entities; other parameters are optional and checked only when supplied.">
+        <ids:attribute cardinality="required">
+          <ids:name>
+            <ids:simpleValue>GlobalId</ids:simpleValue>
+          </ids:name>
+        </ids:attribute>
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN" instructions="If supplied, FireExit should be Boolean.">
           <ids:propertySet>
-            <ids:simpleValue>Pset_StairCommon</ids:simpleValue>
+            <ids:simpleValue>Pset_SpaceFireSafetyRequirements</ids:simpleValue>
           </ids:propertySet>
           <ids:baseName>
             <ids:simpleValue>FireExit</ids:simpleValue>
@@ -157,6 +158,5 @@
         </ids:property>
       </ids:requirements>
     </ids:specification>
-
   </ids:specifications>
 </ids:ids>

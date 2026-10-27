@@ -19,16 +19,16 @@ The A4 IFC Fire Evacuation Checker is a standalone Python program that opens an 
 
 The current Python implementation produces six sections:
 
-1. Model overview — counts the selected IFC element classes and records whether their 3D geometry can be read.
-2. Fire evacuation identification — counts `FireExit = True`, `FireExit = False`, and unspecified values for doors, spaces, and zones in the chosen property sets.
+1. **Model overview** — counts the selected IFC element classes and records whether their 3D geometry can be read.
+2. **Fire evacuation identification** — counts "FireExit = True", "FireExit = False", and unspecified values for doors, spaces, and zones in the chosen property sets.
 3. **Fire-safety properties** — checks whether selected property sets and property values are present; also lists other properties whose names suggest relevance to fire, egress, or width.
-4. **Door geometry and widths** — reports `OverallWidth` values, groups nominal door widths above or below **1.20 m**, lists door names and GlobalIds, and counts explicit `ClearWidth` / `EffectiveWidth` values where present.
+4. **Door geometry and widths** — reports `OverallWidth` values, groups nominal door widths above or below 1.20 m, lists door names and GlobalIds, and counts explicit "ClearWidth" / "EffectiveWidth" values where present.
 5. **Stair geometry and location** — reports stairs and stair flights, available coordinates and documented clear/effective widths.
 6. **Escape routes and connections** — counts `IfcRelSpaceBoundary` relationships and explains what cannot be concluded from that count.
 
 **Important limitations:**
 
-- **No fire-code compliance pass/fail decision is calculated.** The current program reports data availability and uses statuses such as **NOT CHECKED** and **NOT VERIFIED** for matters outside its analysis. The proposed `PASS / FAIL / NOT VERIFIABLE` classification is **not implemented** as a regulatory rules engine.
+- **No fire-code compliance pass/fail decision is calculated.** The current program reports data availability and uses statuses such as **NOT CHECKED** and **NOT VERIFIED** for matters outside its analysis. The proposed "PASS / FAIL / NOT VERIFIABLE" classification is **not implemented** as a regulatory rules engine.
 - **Escape-route connectivity, travel distances, evacuation direction, and east/west stair roles are not evaluated.** Counting space boundaries alone cannot demonstrate a safe, continuous evacuation route.
 - **The 1.20 m door-width threshold is only a screening comparison**, not a universally applicable requirement. `OverallWidth` is nominal width, not verified clear passage width.
 - A fire-safety field being present does **not** establish that its value is correct or that the building satisfies a specific requirement.

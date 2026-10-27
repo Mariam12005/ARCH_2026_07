@@ -33,32 +33,16 @@ The current Python implementation produces six sections:
 
 ### 4. Instructions to run the tool
 
-**Requirements:** A Windows computer with Python, VS Code or another terminal, and an IFC file such as `B308X(1).ifc`. An internet connection may be needed the first time to install IfcOpenShell.
-
-**Option A — Select an IFC file in a popup window (recommended)**
-
-1. Save the Python checker, `A4_main_output_fixed.py`, to your computer. If the submitted file is named `main.py`, use `main.py` in the commands below instead.
-2. Open the folder containing the Python file in VS Code (**File → Open Folder**).
-3. Open **Terminal → New Terminal**.
-4. Run:
-
-   ```powershell
+You need: Python, VS Code, and an IFC model file (for example, B308X(1).ifc).
+1. Save the files. Download A4_main_output_fixed.py and your .ifc model to your computer.
+2. Open VS Code. Open the folder containing A4_main_output_fixed.py (File → Open Folder).
+3. Open the terminal. In VS Code, select Terminal → New Terminal.
+4. Run the program. Enter this command and press Enter:
    python -u "A4_main_output_fixed.py"
-   ```
-
-5. The program attempts to install **IfcOpenShell** automatically if it is not installed for the Python interpreter being used. If installation fails, run `python -m pip install ifcopenshell` in the terminal and retry.
-6. In the file-selection window, choose `B308X(1).ifc` (or another `.ifc` file). The IFC model does **not** need to be in the same folder as the script.
-7. Read the **seven-section fire evacuation report** in the VS Code terminal. The program shows a startup message, then model-analysis progress, and finally the report.
-
-**Option B — Pass the IFC file path directly**
-
-```powershell
-python -u "A4_main_output_fixed.py" "C:\Users\<your-user>\Downloads\B308X(1).ifc"
-```
-
-Replace `<your-user>` and the path with the actual file location. This bypasses the popup. If `python` selects a different Python environment from VS Code, use **Python: Select Interpreter** and choose the interpreter with IfcOpenShell installed, or run the command with the full path to that interpreter.
-
-**Troubleshooting:** If nothing appears, confirm that you are running the **Python `.py` file**, not pasting `from ...` or `import ...` statements into PowerShell. If the chooser seems absent, check behind VS Code. If the terminal reports a missing IFC file, check the selected path and filename. The script opens the IFC model with `ifcopenshell.open(...)`; it does not connect to a live Bonsai session.
+5. Choose your IFC model. When the file-selection window opens, select B308X(1).ifc (or your own IFC file) and click Open. The model can be in a different folder.
+6. Read the results. The fire-evacuation data report appears in the VS Code terminal with seven sections covering model elements, properties, geometry, widths, stairs, connections, and final findings.
+   
+Notes: The script tries to install IfcOpenShell automatically if it is missing (internet access may be required). If that fails, run python -m pip install ifcopenshell in the terminal, then run the script again. If you renamed the Python file to main.py, run python -u "main.py" instead. If no file-selection window appears, check behind VS Code.
 
 ## Advanced Building Design
 

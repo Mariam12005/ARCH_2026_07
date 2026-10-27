@@ -36,10 +36,8 @@ The current Python implementation produces six sections:
 You need: Python, VS Code, and an IFC model file (for example, B308X(1).ifc).
 1. Save the files. Download A4_main_output_fixed.py and your .ifc model to your computer.
 2. Open VS Code. Open the folder containing A4_main_output_fixed.py (File → Open Folder).
-3. Open the terminal. In VS Code, select Terminal → New Terminal.
-4. Run the program. Enter this command and press Enter:
-   python -u "A4_main_output_fixed.py"
-5. Choose your IFC model. When the file-selection window opens, select B308X(1).ifc (or your own IFC file) and click Open. The model can be in a different folder.
+3. Run the program.
+4. Choose your IFC model. When the file-selection window opens, select B308X(1).ifc (or your own IFC file) and click Open. The model can be in a different folder.
 6. Read the results. The fire-evacuation data report appears in the VS Code terminal with seven sections covering model elements, properties, geometry, widths, stairs, connections, and final findings.
    
 Notes: The script tries to install IfcOpenShell automatically if it is missing (internet access may be required). If that fails, run python -m pip install ifcopenshell in the terminal, then run the script again. If you renamed the Python file to main.py, run python -u "main.py" instead. If no file-selection window appears, check behind VS Code.

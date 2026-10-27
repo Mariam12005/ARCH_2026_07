@@ -1,0 +1,162 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ids:ids
+    xmlns:ids="http://standards.buildingsmart.org/IDS"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <ids:info>
+    <ids:title>Group 07 - Fire Evacuation Model Information Requirements</ids:title>
+    <ids:version>1.0</ids:version>
+    <ids:description>Model information requirements for fire evacuation identification and subsequent Python-based geometry checks. An IDS validation failure indicates incomplete information, not proof of unsafe evacuation.</ids:description>
+    <ids:purpose>Check data availability before fire evacuation analysis</ids:purpose>
+  </ids:info>
+
+  <ids:specifications>
+
+    <!-- 1. Door dimensions -->
+    <ids:specification name="Doors - nominal dimensions" ifcVersion="IFC4X3_ADD2">
+      <ids:applicability minOccurs="1" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCDOOR</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:attribute cardinality="required">
+          <ids:name>
+            <ids:simpleValue>OverallWidth</ids:simpleValue>
+          </ids:name>
+        </ids:attribute>
+        <ids:attribute cardinality="required">
+          <ids:name>
+            <ids:simpleValue>OverallHeight</ids:simpleValue>
+          </ids:name>
+        </ids:attribute>
+      </ids:requirements>
+    </ids:specification>
+
+    <!-- 2. Fire exit identification -->
+    <ids:specification name="Doors - fire exit identification" ifcVersion="IFC4X3_ADD2">
+      <ids:applicability minOccurs="1" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCDOOR</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property cardinality="required" dataType="IFCBOOLEAN">
+          <ids:propertySet>
+            <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
+          </ids:propertySet>
+          <ids:baseName>
+            <ids:simpleValue>FireExit</ids:simpleValue>
+          </ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+
+    <!-- 3. Door fire safety properties -->
+    <ids:specification name="Doors - other fire safety data" ifcVersion="IFC4X3_ADD2">
+      <ids:applicability minOccurs="1" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCDOOR</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property cardinality="optional" dataType="IFCLABEL">
+          <ids:propertySet>
+            <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
+          </ids:propertySet>
+          <ids:baseName>
+            <ids:simpleValue>FireRating</ids:simpleValue>
+          </ids:baseName>
+        </ids:property>
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN">
+          <ids:propertySet>
+            <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
+          </ids:propertySet>
+          <ids:baseName>
+            <ids:simpleValue>SelfClosing</ids:simpleValue>
+          </ids:baseName>
+        </ids:property>
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN">
+          <ids:propertySet>
+            <ids:simpleValue>Pset_DoorCommon</ids:simpleValue>
+          </ids:propertySet>
+          <ids:baseName>
+            <ids:simpleValue>SmokeStop</ids:simpleValue>
+          </ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+
+    <!-- 4. Space fire safety -->
+    <ids:specification name="Spaces - evacuation identification" ifcVersion="IFC4X3_ADD2">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSPACE</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property cardinality="required" dataType="IFCBOOLEAN">
+          <ids:propertySet>
+            <ids:simpleValue>Pset_SpaceFireSafetyRequirements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:baseName>
+            <ids:simpleValue>FireExit</ids:simpleValue>
+          </ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+
+    <!-- 5. Zone fire safety -->
+    <ids:specification name="Zones - evacuation identification" ifcVersion="IFC4X3_ADD2">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCZONE</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property cardinality="required" dataType="IFCBOOLEAN">
+          <ids:propertySet>
+            <ids:simpleValue>Pset_SpaceFireSafetyRequirements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:baseName>
+            <ids:simpleValue>FireExit</ids:simpleValue>
+          </ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+
+    <!-- 6. Stair fire safety -->
+    <ids:specification name="Stairs - fire exit information" ifcVersion="IFC4X3_ADD2">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTAIR</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property cardinality="optional" dataType="IFCBOOLEAN">
+          <ids:propertySet>
+            <ids:simpleValue>Pset_StairCommon</ids:simpleValue>
+          </ids:propertySet>
+          <ids:baseName>
+            <ids:simpleValue>FireExit</ids:simpleValue>
+          </ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+
+  </ids:specifications>
+</ids:ids>

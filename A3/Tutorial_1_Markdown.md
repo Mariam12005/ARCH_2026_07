@@ -71,31 +71,6 @@ MODEL_PATH = Path(
 
 Change the path so that it points to the IFC file on your own computer.
 
-Check that the file exists:
-
-```python
-if not MODEL_PATH.is_file():
-    raise FileNotFoundError(
-        f"No IFC file found at {MODEL_PATH}"
-    )
-```
-
-Open the model:
-
-```python
-model = ifcopenshell.open(MODEL_PATH)
-
-print("IFC schema:", model.schema)
-```
-
-### Example output
-
-```text
-IFC schema: IFC4X3_ADD2
-```
-
-The exact output depends on the IFC model you are using.
-
 ---
 
 # 3. Check the important IFC classes

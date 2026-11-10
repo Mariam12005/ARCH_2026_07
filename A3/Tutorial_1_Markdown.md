@@ -223,8 +223,6 @@ A program should not automatically assume that a door is an emergency exit becau
 
 These assumptions may be wrong.
 
-For a reliable BIM check, the information should be explicitly defined in the IFC or come from another justified information source.
-
 ---
 
 # 6. Check space boundaries

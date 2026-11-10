@@ -100,11 +100,7 @@ classes = [
 
 for ifc_class in classes:
     objects = model.by_type(ifc_class)
-
-    print(
-        ifc_class,
-        len(objects)
-    )
+    print(ifc_class,len(objects))
 ```
 
 ### Example output from Building 308

@@ -114,40 +114,6 @@ IfcBuildingStorey 6
 IfcRelSpaceBoundary 0
 ```
 
----
-
-## What do these classes mean?
-
-### IfcSpace
-
-`IfcSpace` represents spaces or areas inside the building.
-
-For evacuation analysis, spaces can represent the starting locations of people.
-
-### IfcDoor
-
-`IfcDoor` represents doors.
-
-Doors can connect spaces and may form part of an evacuation route.
-
-### IfcStair and IfcStairFlight
-
-These represent vertical circulation between storeys.
-
-They are especially important in multi-storey buildings.
-
-### IfcBuildingStorey
-
-This represents the storeys of the building.
-
-### IfcRelSpaceBoundary
-
-This relationship can describe which building elements are connected to a space.
-
-For example, it can help identify which doors belong to or connect to a space.
-
----
-
 ## Question
 
 The Building 308 model contains:

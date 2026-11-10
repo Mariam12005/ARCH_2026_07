@@ -21,7 +21,6 @@ After completing this tutorial, you should be able to:
 3. Check whether doors contain the `FireExit` property.
 4. Check whether the IFC contains `IfcRelSpaceBoundary`.
 5. Decide whether the model is ready for automated fire-egress analysis.
-6. Explain why missing BIM information should be reported instead of guessed.
 
 ---
 

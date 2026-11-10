@@ -1,10 +1,10 @@
 # A3: Teach — Group 07
 
-*Course:* 41934 Advanced Building Information Modeling (BIM), Fall 2026  
-*Group:* 07  
-*Focus area:* Fire evacuation / egress  
-*Target role:* BIM Analyst  
-*Target learning level:* Level 2  
+Course: 41934 Advanced Building Information Modeling (BIM), Fall 2026  
+Group: 07  
+Focus area: Fire evacuation / egress  
+Target role: BIM Analyst  
+Target learning level: Level 2  
 
 ## Tutorial title
 
@@ -58,16 +58,4 @@ example_readiness_check.py contains the complete example Python script used by t
 
 peer_feedback_template.md is used when another student tests the tutorial.
 
-## Peer testing
 
-The tutorial should be tested by peers.
-
-Participants should be able to explain:
-
-- what information is required;
-- where the information is found in IFC;
-- what information is missing;
-- why missing information affects the analysis;
-- whether the model is ready for automated fire-egress checking.
-
-Feedback received from peers should be saved for the later A5 reflection.

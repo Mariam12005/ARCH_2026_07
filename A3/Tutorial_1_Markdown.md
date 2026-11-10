@@ -26,7 +26,7 @@ After completing this tutorial, you should be able to:
 
 # 1. Install IfcOpenShell
 
-Open kommandopromt on your computer
+Open command promt on your computer
 
 Run:
 

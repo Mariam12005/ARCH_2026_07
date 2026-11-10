@@ -130,10 +130,10 @@ Get all doors:
 doors = model.by_type("IfcDoor")
 ```
 
-Now inspect the first ten doors:
+Now inspect the doors:
 
 ```python
-for door in doors[:10]:
+for door in doors:
 
     fire_exit = get_pset(
         door,

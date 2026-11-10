@@ -114,24 +114,6 @@ IfcBuildingStorey 6
 IfcRelSpaceBoundary 0
 ```
 
-## Question
-
-The Building 308 model contains:
-
-```text
-IfcDoor = 101
-IfcSpace = 3
-IfcRelSpaceBoundary = 0
-```
-
-Is the presence of 101 doors enough to automatically create a reliable evacuation network?
-
-**Answer:** No.
-
-The program still needs reliable information about which spaces the doors connect.
-
----
-
 # 4. Check the FireExit property
 
 Next, we check whether the doors contain information identifying emergency exits.

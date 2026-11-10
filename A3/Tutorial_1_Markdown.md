@@ -283,12 +283,6 @@ print(
 )
 ```
 
-### Example output
-
-```text
-Space boundaries related to doors: 0
-```
-
 ---
 
 # 8. Create an information-readiness check

@@ -444,20 +444,6 @@ STATUS: INSUFFICIENT DATA
 
 ---
 
-# 10. What does INSUFFICIENT DATA mean?
-
-`INSUFFICIENT DATA` does not mean that the building is unsafe.
-
-It means:
-
-> The IFC model does not currently contain enough trustworthy information to perform the intended automated fire-egress analysis.
-
-This distinction is important.
-
-A BIM checking tool should not invent information in order to produce a result.
-
-For example, the tool should not randomly select an external door and assume that it is an emergency exit.
-
 ---
 
 # 11. Connection to IDS

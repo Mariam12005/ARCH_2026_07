@@ -46,12 +46,4 @@ We use two separate tutorial formats.
 
 [Open Tutorial 2: Jupyter Notebook](Tutorial_2_Jupyter.ipynb)
 
-## Supporting files
-
-requirements.txt contains the Python packages required for the tutorials.
-
-example_readiness_check.py contains the complete example Python script used by the tutorials.
-
-peer_feedback_template.md is used when another student tests the tutorial.
-
 

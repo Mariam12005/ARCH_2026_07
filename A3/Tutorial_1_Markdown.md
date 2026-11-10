@@ -48,8 +48,6 @@ py -c "import ifcopenshell; print(ifcopenshell.version)"
 
 If a version number appears, the installation was successful.
 
-> Important: `pip install ifcopenshell` is a terminal command. Do not create a Python file called `pip install ifcopenshell.py`.
-
 ---
 
 # 2. Open an IFC model

@@ -212,10 +212,6 @@ print(
 )
 ```
 
-For the Building 308 model used by Group 07, no explicit `FireExit` information was found.
-
----
-
 ## Why is this important?
 
 A program should not automatically assume that a door is an emergency exit because it:

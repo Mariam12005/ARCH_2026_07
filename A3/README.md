@@ -2,7 +2,7 @@
 
 Course: 41934 Advanced Building Information Modeling (BIM), Fall 2026  
 Group: 07  
-Focus area: Fire evacuation / egress  
+Focus area: Fire evacuation/egress  
 Target role: BIM Analyst  
 Target learning level: Level 2  
 
@@ -12,11 +12,11 @@ Target learning level: Level 2
 
 ## Summary
 
-A hands-on tutorial showing BIM analysts how to inspect IFC spaces, doors, fire-exit properties and space boundaries with Python and IfcOpenShell, then decide whether a model contains enough information for reliable evacuation checking.
+A tutorial showing BIM analysts how to inspect IFC spaces, doors, fire-exit properties and space boundaries with Python and IfcOpenShell, then decide whether a model contains enough information for reliable evacuation checking.
 
 ## Learning need
 
-During our previous BIM analysis, we found that an IFC model may contain visible doors, stairs and spaces while still lacking the semantic information and relationships needed for reliable automated fire-evacuation analysis.
+During our previous BIM analysis, we found that an IFC model may contain visible doors, stairs and spaces while still lacking the information and relationships needed for reliable automated fire-evacuation analysis.
 
 Our learning need is:
 
@@ -42,13 +42,9 @@ We use two separate tutorial formats.
 
 [Open Tutorial 1: Markdown](Tutorial_1_Markdown.md)
 
-This is a written step-by-step tutorial containing explanations, code examples and exercises.
-
 ### Tutorial 2 — Jupyter Notebook
 
 [Open Tutorial 2: Jupyter Notebook](Tutorial_2_Jupyter.ipynb)
-
-This is an interactive tutorial where participants run the Python and IfcOpenShell code themselves.
 
 ## Supporting files
 

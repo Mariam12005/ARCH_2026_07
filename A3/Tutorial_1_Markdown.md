@@ -26,7 +26,7 @@ After completing this tutorial, you should be able to:
 
 # 1. Install IfcOpenShell
 
-Open a terminal in VS Code.
+Open kommandopromt on your computer
 
 Run:
 

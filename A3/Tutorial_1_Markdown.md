@@ -165,8 +165,6 @@ False = the door is explicitly marked as not being a fire exit
 None  = the information is missing
 ```
 
----
-
 # 5. Count FireExit information
 
 We can count how many doors contain each type of value.
@@ -282,8 +280,6 @@ print(
     door_boundaries
 )
 ```
-
----
 
 # 8. Create an information-readiness check
 
@@ -408,8 +404,6 @@ def check_egress_readiness(model):
     return status, issues
 ```
 
----
-
 # 9. Run the readiness check
 
 Run:
@@ -442,11 +436,8 @@ STATUS: INSUFFICIENT DATA
 - 101 doors have no FireExit value
 ```
 
----
 
----
-
-# 11. Connection to IDS
+# 10. Connection to IDS
 
 The information identified in this tutorial can also be described as information requirements.
 
@@ -479,127 +470,9 @@ Is enough information available?
 Report missing        Perform
 information           analysis
 ```
-
 ---
 
-# 12. Peer exercise
-
-Now use an IFC model available to your group.
-
-Run:
-
-```python
-print(
-    "Spaces:",
-    len(model.by_type("IfcSpace"))
-)
-
-print(
-    "Doors:",
-    len(model.by_type("IfcDoor"))
-)
-
-print(
-    "Space boundaries:",
-    len(
-        model.by_type(
-            "IfcRelSpaceBoundary"
-        )
-    )
-)
-```
-
-Then run:
-
-```python
-status, issues = check_egress_readiness(
-    model
-)
-
-print(status)
-
-for issue in issues:
-
-    print("-", issue)
-```
-
-Answer the following questions.
-
-### Question 1
-
-How many `IfcSpace` objects are in your model?
-
-**Answer:**
-
-____________________________
-
-### Question 2
-
-How many `IfcDoor` objects are in your model?
-
-**Answer:**
-
-____________________________
-
-### Question 3
-
-How many `IfcRelSpaceBoundary` relationships are present?
-
-**Answer:**
-
-____________________________
-
-### Question 4
-
-Are any doors explicitly marked with:
-
-```text
-Pset_DoorCommon.FireExit = True
-```
-
-**Answer:**
-
-____________________________
-
-### Question 5
-
-What result did the readiness check return?
-
-```text
-READY
-```
-
-or:
-
-```text
-INSUFFICIENT DATA
-```
-
-**Answer:**
-
-____________________________
-
-### Question 6
-
-What information is missing from the IFC?
-
-**Answer:**
-
-____________________________
-
-### Question 7
-
-Do you agree with the program's decision?
-
-Explain why.
-
-**Answer:**
-
-____________________________
-
----
-
-# 13. Discussion
+# 11. Discussion
 
 Consider the following question:
 
@@ -611,7 +484,7 @@ The main point is that an automated BIM tool should avoid hidden assumptions.
 
 ---
 
-# 14. What have we learned?
+# 12. What have we learned?
 
 In this tutorial we used IfcOpenShell to:
 

@@ -1,10 +1,14 @@
 ## Peer Feedback — Group 1
 
-Your use case is clear and relevant to the architectural discipline. We especially liked that you avoided trying to automate whether a facade is generally “beautiful” and instead translated the architectural intent into more measurable aspects such as **facade materials and colours**.
+Your use case is clear and relevant to the architectural discipline. 
+We especially liked that you avoided trying to automate whether a facade is generally “beautiful” and instead translated the architectural intent into more measurable aspects such as facade materials and colours.
 
-A strong part of the work is the way you investigated the IFC model rather than assuming that the facade could be identified only through `IfcWall`. You recognised that the facade also contains elements such as `IfcWindow`, `IfcPlate`, `IfcMember`, `IfcBeam` and `IfcCovering`, which makes the proposed tool more realistic.
+A strong part of the work is the way you investigated the IFC model rather than assuming that the facade could be identified only through `IfcWall`. 
+You recognised that the facade also contains elements such as `IfcWindow`, `IfcPlate`, `IfcMember`, `IfcBeam` and `IfcCovering`, which makes the proposed tool more realistic.
 
-The team diagram also strengthens the proposal. It clearly shows the workflow from loading model properties, filtering different IFC classes, collecting the relevant element IDs, checking material and colour information, comparing the results, and finally separating the output into compliant elements and issues. This makes the overall logic of the proposed tool much easier to understand.
+The team diagram also strengthens the proposal. 
+It clearly shows the workflow from loading model properties, filtering different IFC classes, collecting the relevant element IDs, checking material and colour information, comparing the results, and finally separating the output into compliant elements and issues. 
+This makes the overall logic of the proposed tool much easier to understand.
 
 We also think it is good that the output is divided into:
 
@@ -16,23 +20,12 @@ This is better than only returning pass/fail because it allows the tool to disti
 
 ### Suggestions for improvement
 
-The main area that could be developed further is the **comparison logic**.
+The main area that could be developed further is the comparison logic.
 
 Your diagram contains a comparison stage, but it is still not completely clear how materials and colours are classified as compliant or non-compliant.
 
-For example, the client requirement says that white, green and blue shades should be avoided. It would strengthen the tool if you defined exactly how the Python script decides whether an RGB value should be classified as white, green or blue.
-
-For example:
-
-```text
-RGB value
-↓
-Convert/classify colour
-↓
-Compare with allowed/avoided colour rules
-↓
-Compliant / Non-compliant
-```
+For example, the client requirement says that white, green and blue shades should be avoided. 
+It would strengthen the tool if you defined exactly how the Python script decides whether an RGB value should be classified as white, green or blue.
 
 Without defined thresholds, two people could interpret the same RGB value differently.
 
@@ -53,7 +46,7 @@ The second approach may be more reusable across different IFC models because mat
 
 Your diagram shows separate filters for several IFC classes, which is a good approach.
 
-However, the criteria for deciding whether each object is actually part of the **external facade** could be explained more clearly.
+However, the criteria for deciding whether each object is actually part of the external facade could be explained more clearly.
 
 For `IfcWall`, you already mention:
 
@@ -70,22 +63,6 @@ may not have the same property.
 
 Therefore, one useful improvement would be to clearly define the facade-selection rule for each IFC class.
 
-For example:
-
-```text
-IfcWall
-→ IsExternal = True
-
-IfcPlate
-→ PredefinedType = CURTAIN_PANEL
-
-IfcMember
-→ PredefinedType = MULLION
-
-IfcCovering
-→ PredefinedType = MOLDING
-```
-
 This would make the filter stages shown in your team diagram easier to reproduce in the final Python tool.
 
 ### Multiple materials
@@ -94,77 +71,13 @@ You correctly identified that one facade element can contain more than one mater
 
 It would be useful to clarify how the final result for one element is determined.
 
-For example:
-
-```text
-Window
-├── Glass → compliant
-└── Frame → non-compliant
-
-Final window result = ?
-```
-
 Will the whole window be classified as non-compliant if one component fails, or will each material/component be reported separately?
 
 Clarifying this would make the output more transparent.
 
 ### Diagram feedback
 
-The overall structure of the team diagram is logical:
-
-```text
-Load model
-↓
-Filter relevant IFC classes
-↓
-Extract element IDs
-↓
-Retrieve material and colour
-↓
-Check facade requirements
-↓
-Compare
-↓
-Report compliant elements / issues
-```
-
-One thing that could improve the diagram is renaming some of the temporary blocks such as **“new Idea”**, **“Compare”**, and **“Create a Capture function...”** to names that describe exactly what happens.
-
-For example:
-
-```text
-Extract facade material and colour
-```
-
-instead of:
-
-```text
-Create a Capture function...
-```
-
-and:
-
-```text
-Check facade requirements
-```
-
-instead of:
-
-```text
-new Idea
-```
-
-This would make the diagram easier for someone outside the group to understand without needing additional explanation.
-
-The diagram could also show a more explicit branch such as:
-
-```text
-Required information available?
-          ↓
-       Yes / No
-       ↙     ↘
-    Compare   Report missing information
-```
+The overall structure of the team diagram is logical
 
 This would connect very well with your three proposed result types: compliant, non-compliant and missing information.
 

@@ -102,5 +102,3 @@ We would be interested in hearing your answers to these questions:
 Overall, we think the use case has a strong connection between the architectural requirement, the IFC information and the proposed automated workflow.
 
 The IFC investigation and team diagram show that you have already identified an important challenge: the facade is made from several IFC classes and cannot be identified using one simple filter.
-
-The next important step is to make the **facade-selection, material-classification and colour-comparison rules explicit and measurable**. If these rules are clearly defined, the proposed tool should become much more reproducible, transparent and useful for architectural design review.

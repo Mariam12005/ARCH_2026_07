@@ -229,61 +229,25 @@ If information is missing, the architect or BIM team can improve the model befor
 
 # 9. Individual Reflection — Member 1
 
-**Name:** [Name]
+**Name:** [Sarah]
 
-At the beginning of the course, I had limited experience using Python directly with IFC models. I understood BIM mainly from a modelling and architectural perspective.
 
-During the course, I learned how IFC information can be accessed programmatically and how tools such as IfcOpenShell can be used to inspect entities, properties and relationships.
-
-I would place myself around **Modeller / beginning Analyst** at the start of the course and closer to **Analyst / Self Learner** now.
-
-One of the most important things I learned was that an IFC model can visually appear complete while still missing information required for automation.
-
-I would like to continue learning about IFC relationships, geometry processing and how to create more advanced OpenBIM checking tools.
-
-I can see myself using OpenBIM in my professional work, especially for model checking, quality assurance and automated design analysis.
-
-I would also consider using OpenBIM tools in a thesis if the project involved BIM data, automated checking or architectural analysis.
 
 ---
 
 # 10. Individual Reflection — Member 2
 
-**Name:** [Name]
+**Name:** [Mariam]
 
-At the beginning of the course, my knowledge of OpenBIM mainly involved understanding IFC as a file format for exchanging BIM models.
 
-During the assignments, I gained a better understanding of the information structure behind IFC.
-
-Working with fire evacuation showed me that automated BIM analysis depends strongly on how consistently information is modelled.
-
-I would describe my development as moving from mainly a **Modeller** perspective toward an **Analyst** perspective.
-
-I especially learned the importance of checking the available information before trusting the result of an automated tool.
-
-In the future, I would like to learn more about IDS, IFC relationships and how OpenBIM information requirements can be integrated into real design workflows.
-
-I think OpenBIM will be useful in professional architectural work because open standards make it easier to exchange, check and analyse information independently of one specific software platform.
 
 ---
 
 # 11. Individual Reflection — Member 3
 
-**Name:** [Name]
+**Name:** [Eda]
 
-Before the course, I had limited experience developing automated workflows using IFC information.
 
-During the project, I learned more about how an architectural requirement can be translated into information requirements and then into Python checks.
-
-Developing the A3 tutorial was particularly useful because teaching the workflow required us to understand it clearly ourselves.
-
-I would place myself around **Modeller / Analyst** at the beginning and closer to **Analyst / Self Learner** at the end of the course.
-
-I still want to improve my programming skills and gain a deeper understanding of IFC relationships and geometry.
-
-I can imagine using OpenBIM tools professionally for design review, model validation and interdisciplinary coordination.
-
-The course has also made me more aware that BIM quality depends not only on what is visible in the model, but also on the quality and structure of the underlying information.
 
 ---
 

@@ -31,7 +31,6 @@ During the course, we became more confident with:
 - using `model.by_type()` to find IFC entities;
 - reading IFC attributes and property sets;
 - identifying missing BIM information;
-- understanding the difference between geometry and semantic information;
 - using Python to automate model checks;
 - reporting results without making unsupported assumptions.
 

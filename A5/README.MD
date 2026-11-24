@@ -1,1 +1,374 @@
+# A5: Reflect — Group 07
 
+**Course:** 41934 Advanced Building Information Modeling  
+**Group:** 07  
+**Focus area:** Fire evacuation / egress  
+**Project:** IFC Fire-Egress Information Checker
+
+---
+
+# 1. Learning Experience
+
+Throughout the course, our group focused on how OpenBIM and IFC information can support fire-evacuation analysis.
+
+One of the most important things we learned is that having geometry in an IFC model does not necessarily mean that the model contains enough information for reliable automated analysis.
+
+For example, a model may contain doors, spaces and stairs, but still lack important information such as:
+
+- `Pset_DoorCommon.FireExit`
+- fire-safety properties
+- `IfcRelSpaceBoundary`
+- reliable connections between spaces and doors
+- documented clear widths
+
+This changed the way we understood BIM automation. Instead of immediately trying to calculate evacuation routes, we learned that the first step should be to check whether the required information is actually available.
+
+At the beginning of the course, our understanding of OpenBIM was mainly focused on using and viewing IFC models. We had limited experience using Python and IfcOpenShell to directly investigate IFC entities, attributes, property sets and relationships.
+
+During the course, we became more confident with:
+
+- opening IFC files using IfcOpenShell;
+- using `model.by_type()` to find IFC entities;
+- reading IFC attributes and property sets;
+- identifying missing BIM information;
+- understanding the difference between geometry and semantic information;
+- using Python to automate model checks;
+- reporting results without making unsupported assumptions.
+
+We would therefore describe our development as moving from mainly a **Modeller / beginning Analyst level** toward a stronger **Analyst / Self Learner level**.
+
+---
+
+# 2. What We Still Need to Learn
+
+There are still several areas that we would like to develop further.
+
+The main one is IFC connectivity.
+
+For fire evacuation analysis, it is not enough to know that spaces and doors exist. We also need to understand how spaces, doors, stairs and storeys are connected.
+
+We would therefore like to learn more about:
+
+- IFC relationships between spaces and building elements;
+- `IfcRelSpaceBoundary`;
+- building evacuation networks from IFC information;
+- geometry-based connectivity when semantic relationships are missing;
+- calculating actual evacuation-route distances;
+- validating information requirements using IDS;
+- making OpenBIM tools work reliably across different IFC models.
+
+Our current work mainly checks whether the information needed for analysis is available. A future development could use this information to construct a complete evacuation network and calculate routes.
+
+---
+
+# 3. How We Might Use OpenBIM in the Future
+
+We can see OpenBIM being useful both academically and professionally.
+
+In future projects or a thesis, OpenBIM could support topics such as:
+
+- automated building-code checking;
+- fire-safety analysis;
+- accessibility analysis;
+- design optimisation;
+- information-quality assessment;
+- sustainability analysis.
+
+In professional architectural work, OpenBIM could also support:
+
+- model validation;
+- quality assurance;
+- interdisciplinary coordination;
+- automated design checks;
+- information delivery;
+- workflows that are less dependent on one specific BIM software platform.
+
+The course has shown us that understanding IFC at a data level can make BIM workflows much more powerful.
+
+---
+
+# 4. Process of Developing the A3 Tutorial
+
+For A3, we developed the tutorial:
+
+**Checking IFC Fire-Egress Data with IfcOpenShell**
+
+The learning need was:
+
+> How can a BIM analyst use Python and IfcOpenShell to determine whether an IFC model contains sufficient fire-egress information before attempting automated route analysis?
+
+We created the tutorial in two formats:
+
+1. Markdown tutorial
+2. Jupyter Notebook
+
+The Markdown tutorial was designed as a written step-by-step reference.
+
+The Jupyter Notebook was designed as a more interactive version where students could execute Python code directly and observe the results.
+
+Developing the tutorial helped us understand the topic better ourselves. Explaining the workflow to another student forced us to simplify the code and explain why each IFC entity or property was important.
+
+One of the most important teaching points became the difference between:
+
+```text
+PASS / FAIL
+```
+
+and:
+
+```text
+INSUFFICIENT DATA
+```
+
+We learned that an automated BIM tool should not force a pass/fail result when the required IFC information is missing.
+
+---
+
+# 5. Reflection on the Course Process
+
+The course process helped us understand how a broad architectural issue can gradually become an OpenBIM use case.
+
+We started with a general topic of fire evacuation and gradually narrowed it down into measurable information requirements.
+
+The process can be summarised as:
+
+```text
+Identify a problem
+↓
+Define a use case
+↓
+Identify information requirements
+↓
+Inspect available BIM information
+↓
+Develop an automated method
+↓
+Test and evaluate the result
+```
+
+We think this process could also be useful for a future thesis because it provides a structured way of developing a research or design question.
+
+We think having freedom in choosing the use case was useful because it allowed us to work with a topic that was relevant to our architectural interests.
+
+However, some example use cases at the beginning could also have helped make the first stages easier.
+
+The number of tools introduced during the course was useful, although at times it was challenging to learn several new concepts at once.
+
+For our project, Python and IfcOpenShell were the most important tools because they allowed us to directly inspect and process IFC information.
+
+---
+
+# 6. Group Reflection on Feedback
+
+We received positive feedback on our A3 tutorial.
+
+The group found the tutorial **well structured and easy to understand**, and they especially liked that we explained the different steps clearly and showed examples of the results.
+
+They also liked that we provided the tutorial in **two formats: a Markdown guide and a Jupyter Notebook**. This gave users two different ways of learning the workflow.
+
+One suggestion was to include an example showing what the output looks like when the IFC model contains **sufficient data**.
+
+At the moment, our tutorial mainly demonstrates the result:
+
+```text
+INSUFFICIENT DATA
+```
+
+The feedback suggested that it would be useful to also show:
+
+```text
+READY
+```
+
+We think this is a useful suggestion because showing both possible outcomes would make it easier for users to compare and understand the results.
+
+Based on this feedback, we would improve the tutorial by adding an example of a model that passes the information-readiness check and showing the expected `READY` output.
+
+Overall, the feedback confirmed that the structure and teaching approach worked well, while also identifying a simple improvement that could make the tutorial clearer and more complete.
+
+---
+
+# 7. Did the Tool Address the Use Case?
+
+Partly.
+
+The tool successfully addresses the **information-readiness part** of the fire-evacuation use case.
+
+It can inspect whether relevant IFC information exists, including:
+
+- fire-exit information;
+- fire-related door properties;
+- nominal door widths;
+- stairs and stair flights;
+- space-boundary relationships;
+- relevant IFC geometry.
+
+However, the tool does not yet prove full fire-evacuation compliance.
+
+For example, it does not currently verify:
+
+- complete evacuation-route connectivity;
+- actual escape-route distances;
+- effective clear widths in all cases;
+- whether evacuation stairs are located correctly;
+- full compliance with fire-safety regulations.
+
+Therefore, the tool should be understood as an **IFC information and readiness checker**, rather than a complete fire-safety compliance tool.
+
+This limitation is important because automated BIM tools should clearly distinguish between what has actually been verified and what has not been checked.
+
+---
+
+# 8. Stage in Advanced Building Design
+
+Our tool is mainly relevant during the **design and design-review stages**, before the building is constructed.
+
+At this stage, the IFC model can be checked to determine whether the required fire-egress information has been included.
+
+If information is missing, the architect or BIM team can improve the model before later analysis or compliance checking is performed.
+
+**Advanced Building Design stage:**  
+[Insert Stage A, B, C or D according to the course definition.]
+
+---
+
+# 9. Individual Reflection — Member 1
+
+**Name:** [Name]
+
+At the beginning of the course, I had limited experience using Python directly with IFC models. I understood BIM mainly from a modelling and architectural perspective.
+
+During the course, I learned how IFC information can be accessed programmatically and how tools such as IfcOpenShell can be used to inspect entities, properties and relationships.
+
+I would place myself around **Modeller / beginning Analyst** at the start of the course and closer to **Analyst / Self Learner** now.
+
+One of the most important things I learned was that an IFC model can visually appear complete while still missing information required for automation.
+
+I would like to continue learning about IFC relationships, geometry processing and how to create more advanced OpenBIM checking tools.
+
+I can see myself using OpenBIM in my professional work, especially for model checking, quality assurance and automated design analysis.
+
+I would also consider using OpenBIM tools in a thesis if the project involved BIM data, automated checking or architectural analysis.
+
+---
+
+# 10. Individual Reflection — Member 2
+
+**Name:** [Name]
+
+At the beginning of the course, my knowledge of OpenBIM mainly involved understanding IFC as a file format for exchanging BIM models.
+
+During the assignments, I gained a better understanding of the information structure behind IFC.
+
+Working with fire evacuation showed me that automated BIM analysis depends strongly on how consistently information is modelled.
+
+I would describe my development as moving from mainly a **Modeller** perspective toward an **Analyst** perspective.
+
+I especially learned the importance of checking the available information before trusting the result of an automated tool.
+
+In the future, I would like to learn more about IDS, IFC relationships and how OpenBIM information requirements can be integrated into real design workflows.
+
+I think OpenBIM will be useful in professional architectural work because open standards make it easier to exchange, check and analyse information independently of one specific software platform.
+
+---
+
+# 11. Individual Reflection — Member 3
+
+**Name:** [Name]
+
+Before the course, I had limited experience developing automated workflows using IFC information.
+
+During the project, I learned more about how an architectural requirement can be translated into information requirements and then into Python checks.
+
+Developing the A3 tutorial was particularly useful because teaching the workflow required us to understand it clearly ourselves.
+
+I would place myself around **Modeller / Analyst** at the beginning and closer to **Analyst / Self Learner** at the end of the course.
+
+I still want to improve my programming skills and gain a deeper understanding of IFC relationships and geometry.
+
+I can imagine using OpenBIM tools professionally for design review, model validation and interdisciplinary coordination.
+
+The course has also made me more aware that BIM quality depends not only on what is visible in the model, but also on the quality and structure of the underlying information.
+
+---
+
+# 12. Future Use of OpenBIM
+
+We believe OpenBIM could be useful both academically and professionally.
+
+In a thesis, OpenBIM could support:
+
+- automated compliance checking;
+- fire-safety analysis;
+- accessibility analysis;
+- information-quality assessment;
+- design optimisation.
+
+In professional practice, OpenBIM could support:
+
+- BIM quality control;
+- design review;
+- model checking;
+- interdisciplinary coordination;
+- automated information checks.
+
+The course has made us more aware that IFC is not only an exchange format, but also a structured data source that can be used for automated analysis.
+
+---
+
+# 13. Wrap-up — A1 to A5
+
+The assignments gradually developed our understanding of OpenBIM.
+
+## A1 — Understand the model
+
+We investigated Building 308 and identified limitations in the available fire-evacuation information.
+
+We found that the model contained relevant building elements, but some information needed for reliable fire-egress analysis was missing.
+
+## A2 — Define the use case
+
+We translated the fire-evacuation problem into an OpenBIM use case.
+
+We identified the information required for automated checking and considered how Python and IfcOpenShell could support the analysis.
+
+## A3 — Teach
+
+We created two tutorial formats:
+
+- a Markdown tutorial;
+- a Jupyter Notebook.
+
+The tutorials teach BIM analysts how to inspect IFC fire-egress information using IfcOpenShell and determine whether the model contains sufficient information for further automated analysis.
+
+## A4 — Implement
+
+We developed a Python-based IFC fire-egress checker.
+
+The tool inspects relevant IFC classes, properties, widths, geometry and information availability.
+
+The tool also makes clear which requirements are **not verified** rather than making unsupported assumptions.
+
+## A5 — Reflect
+
+Finally, we reflected on what the complete process taught us about OpenBIM, automation and information quality.
+
+The most important lesson from A1–A5 is:
+
+> **Reliable BIM automation depends on reliable BIM information.**
+
+An automated tool should not produce conclusions that are stronger than the information contained in the model.
+
+Sometimes the most useful result is not:
+
+**PASS**
+
+or:
+
+**FAIL**
+
+but:
+
+**INSUFFICIENT DATA**
+
+This is an important principle that we expect to carry into future OpenBIM work.

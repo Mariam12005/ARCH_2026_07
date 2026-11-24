@@ -225,9 +225,6 @@ At this stage, the IFC model can be checked to determine whether the required fi
 
 If information is missing, the architect or BIM team can improve the model before later analysis or compliance checking is performed.
 
-**Advanced Building Design stage:**  
-[Insert Stage A, B, C or D according to the course definition.]
-
 ---
 
 # 9. Individual Reflection — Member 1

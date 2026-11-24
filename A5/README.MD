@@ -286,10 +286,6 @@ The tool also makes clear which requirements are **not verified** rather than ma
 
 Finally, we reflected on what the complete process taught us about OpenBIM, automation and information quality.
 
-The most important lesson from A1–A5 is:
-
-> **Reliable BIM automation depends on reliable BIM information.**
-
 An automated tool should not produce conclusions that are stronger than the information contained in the model.
 
 Sometimes the most useful result is not:

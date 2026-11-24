@@ -50,8 +50,7 @@ We would therefore like to learn more about:
 
 - IFC relationships between spaces and building elements;
 - `IfcRelSpaceBoundary`;
-- building evacuation networks from IFC information;
-- geometry-based connectivity when semantic relationships are missing;
+- building evacuation networks from IFC information
 - calculating actual evacuation-route distances;
 - validating information requirements using IDS;
 - making OpenBIM tools work reliably across different IFC models.

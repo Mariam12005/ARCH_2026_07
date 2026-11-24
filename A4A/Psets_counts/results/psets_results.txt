@@ -1,0 +1,6 @@
+{
+    "FireExit": 0,
+    "FireRating": 0,
+    "SelfClosing": 0,
+    "SmokeStop": 0
+}

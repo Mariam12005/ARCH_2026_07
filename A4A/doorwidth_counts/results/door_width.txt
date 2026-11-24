@@ -1,0 +1,5 @@
+{
+    "width_1.20m_or_more": 36,
+    "width_below_1.20m": 65,
+    "unknown_width": 0
+}

@@ -205,7 +205,23 @@ If information is missing, the architect or BIM team can improve the model befor
 
 **Name:** [Sarah]
 
+My future use of OpenBIM
 
+As an architecture student, I originally saw IFC mainly as a way of exchanging models between different software. During this course, I started to understand that IFC can also be used as a source of structured information that can be checked and analysed.
+
+I could see myself using OpenBIM in a future thesis, especially if I work with BIM analysis, building performance or automated checking. In professional practice, I think it could be useful for finding missing information, checking models and supporting coordination between different disciplines.
+
+I do not expect programming to become the main part of my work, but I now feel more confident understanding what tools such as Python and IfcOpenShell can do and how they can support architectural work.
+
+Wrap-up
+
+For me, the biggest change from A1 to A5 was learning to look beyond what is visible in the 3D model.
+
+At the beginning, our fire-evacuation topic seemed mainly like a design and safety problem. As we worked through the assignments, I learned that automated analysis also depends heavily on how the information is structured inside the IFC.
+
+A3 helped me understand the topic better because we had to explain it clearly to other students, while A4 showed me how the same ideas could actually be tested with Python and IfcOpenShell.
+
+The main lesson I will take from the course is that a BIM model can look complete while still missing important information. This has made me more aware of the importance of information quality when using BIM for automated analysis.
 
 ---
 

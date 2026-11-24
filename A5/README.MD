@@ -237,13 +237,11 @@ I would like to go in a more humanitarian direction with my engineering degree, 
 
 Wrap up
 
-When we started with A1, my knowledge was mainly limited to working with Blender. In a previous course, we had already been introduced to the benefits of making building information more accessible to people working on the same model.
+When we started with A1, my knowledge was mainly limited to working with Blender. In a previous course, we had already been introduced to the benefits of making building information more accessible to people working on the same model. During A1 and A2, my previous experience with Blender made it easier for me to identify some of the problems in the IFC model.
 
-During A1 and A2, my previous experience with Blender made it easier for me to identify some of the problems in the IFC model. However, identifying a problem and knowing how to solve it were two different things.
+Through A3 and A4, I started to understand how we could approach these problems and which tools we could use to find possible solutions. I also learned a lot more about programming and the different tools available within.
 
-Through A3 and A4, I started to understand how we could approach these problems and which tools we could use to find possible solutions. I also learned a lot more about programming and the different tools available within OpenBIM.
-
-Looking back at the journey from A1 to A5, one of my main takeaways is that taking the first step towards solving a problem can sometimes be easier than expected. It does not necessarily mean that the entire problem has been solved, but it provides a starting point for further development. The course has given me a better understanding of how digital tools and programming can support problem-solving in engineering, even beyond BIM.
+Looking back at the journey from A1 to A5, one of my main takeaways is that taking the first step towards solving a problem can sometimes be easier than expected. It does not necessarily mean that the entire problem has been solved, but it provides a starting point for further development. The course has given me a better understanding of how digital tools and programming can support problemsolving in engineering, even beyond BIM.
 
 
 ---

@@ -228,12 +228,15 @@ The main lesson I will take from the course is that a BIM model can look complet
 # 9. Individual Reflection — Member 2
 
 **Name:** [Mariam]
+
 My future use of BIM
+
 I would consider using OpenBIM in my thesis, but I am still exploring different directions. Even if I do not end up working directly with BIM, this course has made me realise that I could use similar tools and approaches to find solutions within some of the other areas I am interested in. I think this could be especially useful in interdisciplinary projects, where people work on the same project but focus on different things.
 
 I would like to go in a more humanitarian direction with my engineering degree, so I expect to work more with calculations and analysis than modelling. However, I find OpenBIM quite interesting, and I would not rule out using it in my professional life within the next 10 years. I think some of the things we have learned could make certain tasks easier and help people from different disciplines work together.
 
 Wrap up
+
 When we started with A1, my knowledge was mainly limited to working with Blender. In a previous course, we had already been introduced to the benefits of making building information more accessible to people working on the same model.
 
 During A1 and A2, my previous experience with Blender made it easier for me to identify some of the problems in the IFC model. However, identifying a problem and knowing how to solve it were two different things.

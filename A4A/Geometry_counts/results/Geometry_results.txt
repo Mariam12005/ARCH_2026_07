@@ -1,0 +1,7 @@
+{
+    "doors": 101,
+    "spaces": 3,
+    "zones": 0,
+    "stairs": 1,
+    "stair_flights": 1
+}

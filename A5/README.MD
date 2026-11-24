@@ -59,33 +59,7 @@ Our current work mainly checks whether the information needed for analysis is av
 
 ---
 
-# 3. How We Might Use OpenBIM in the Future
-
-We can see OpenBIM being useful both academically and professionally.
-
-In future projects or a thesis, OpenBIM could support topics such as:
-
-- automated building-code checking;
-- fire-safety analysis;
-- accessibility analysis;
-- design optimisation;
-- information-quality assessment;
-- sustainability analysis.
-
-In professional architectural work, OpenBIM could also support:
-
-- model validation;
-- quality assurance;
-- interdisciplinary coordination;
-- automated design checks;
-- information delivery;
-- workflows that are less dependent on one specific BIM software platform.
-
-The course has shown us that understanding IFC at a data level can make BIM workflows much more powerful.
-
----
-
-# 4. Process of Developing the A3 Tutorial
+# 3. Process of Developing the A3 Tutorial
 
 For A3, we developed the tutorial:
 
@@ -122,7 +96,7 @@ We learned that an automated BIM tool should not force a pass/fail result when t
 
 ---
 
-# 5. Reflection on the Course Process
+# 4. Reflection on the Course Process
 
 The course process helped us understand how a broad architectural issue can gradually become an OpenBIM use case.
 
@@ -156,7 +130,7 @@ For our project, Python and IfcOpenShell were the most important tools because t
 
 ---
 
-# 6. Group Reflection on Feedback
+# 5. Group Reflection on Feedback
 
 We received positive feedback on our A3 tutorial.
 
@@ -186,7 +160,7 @@ Overall, the feedback confirmed that the structure and teaching approach worked 
 
 ---
 
-# 7. Did the Tool Address the Use Case?
+# 6. Did the Tool Address the Use Case?
 
 Partly.
 
@@ -217,7 +191,7 @@ This limitation is important because automated BIM tools should clearly distingu
 
 ---
 
-# 8. Stage in Advanced Building Design
+# 7. Stage in Advanced Building Design
 
 Our tool is mainly relevant during the **design and design-review stages**, before the building is constructed.
 
@@ -227,7 +201,7 @@ If information is missing, the architect or BIM team can improve the model befor
 
 ---
 
-# 9. Individual Reflection — Member 1
+# 8. Individual Reflection — Member 1
 
 **Name:** [Sarah]
 
@@ -235,7 +209,7 @@ If information is missing, the architect or BIM team can improve the model befor
 
 ---
 
-# 10. Individual Reflection — Member 2
+# 9. Individual Reflection — Member 2
 
 **Name:** [Mariam]
 
@@ -243,7 +217,7 @@ If information is missing, the architect or BIM team can improve the model befor
 
 ---
 
-# 11. Individual Reflection — Member 3
+# 10. Individual Reflection — Member 3
 
 **Name:** [Eda]
 
@@ -251,7 +225,7 @@ If information is missing, the architect or BIM team can improve the model befor
 
 ---
 
-# 12. Future Use of OpenBIM
+# 11. Future Use of OpenBIM
 
 We believe OpenBIM could be useful both academically and professionally.
 
@@ -275,7 +249,7 @@ The course has made us more aware that IFC is not only an exchange format, but a
 
 ---
 
-# 13. Wrap-up — A1 to A5
+# 12. Wrap-up — A1 to A5
 
 The assignments gradually developed our understanding of OpenBIM.
 
